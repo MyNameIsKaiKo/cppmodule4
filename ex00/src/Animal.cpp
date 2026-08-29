@@ -12,9 +12,16 @@
 
 #include "../include/Animal.hpp"
 
-Animal::Animal() : _type("empty") {}
+Animal::Animal() : _type("empty") 
+{
+	std::cout << "Animal constructor used" << std::endl;
+}
 
-Animal::Animal(const Animal& other) { *this = other; }
+Animal::Animal(const Animal& other) 
+{
+	std::cout << "Animal copy constructor used" << std::endl;
+	*this = other; 
+}
 
 Animal& Animal::operator=(const Animal& other)
 {
@@ -30,5 +37,8 @@ void Animal::makeSound () const
 
 std::string Animal::getType() const { return (this->_type); }
 
-Animal::~Animal() {}
+Animal::~Animal()
+{
+	std::cout << "Animal destructor used" << std::endl;
+}
 

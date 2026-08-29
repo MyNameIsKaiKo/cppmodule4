@@ -12,9 +12,17 @@
 
 #include "../include/Cat.hpp"
 
-Cat::Cat() { this->_type = "Cat"; }
+Cat::Cat()
+{
+	std::cout << "Cat constructor used" << std::endl;
+	this->_type = "Cat";
+}
 
-Cat::Cat(const Cat& other) { *this = other; }
+Cat::Cat(const Cat& other) 
+{
+	std::cout << "Cat copy constructor used" << std::endl;
+	*this = other; 
+}
 
 Cat& Cat::operator=(const Cat& other)
 {
@@ -28,4 +36,7 @@ void Cat::makeSound () const
 	std::cout << "Mew" << std::endl;
 }
 
-Cat::~Cat() {}
+Cat::~Cat()
+{
+	std::cout << "Cat destructor used" << std::endl;
+}

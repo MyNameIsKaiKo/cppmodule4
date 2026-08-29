@@ -21,6 +21,7 @@ int main()
 	const Animal* 		dog = new Dog();
 	const WrongAnimal* 	wrongMeta = new WrongAnimal();
 	const WrongAnimal*	wrongCat = new WrongCat();
+	const WrongCat*		realWrongCat = new WrongCat();
 
 	std::cout << cat->getType() << " : ";
 	cat->makeSound();
@@ -32,5 +33,14 @@ int main()
 	wrongMeta->makeSound();
 	std::cout << wrongCat->getType() << " : ";
 	wrongCat->makeSound();
+	std::cout << realWrongCat->getType() << " : ";
+	realWrongCat->makeSound();
+	delete meta;
+	delete cat;
+	delete dog;
+	delete wrongMeta;
+	delete wrongCat;
+	delete realWrongCat;
+	
 	return (0);
 }

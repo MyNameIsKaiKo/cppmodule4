@@ -14,10 +14,15 @@
 
 Dog::Dog() 
 {
+	std::cout << "Dog constructor used" << std::endl;
 	this->_type = "Dog";
 }
 
-Dog::Dog(const Dog& other) { *this = other; }
+Dog::Dog(const Dog& other) 
+{
+	std::cout << "Dog copy constructor used" << std::endl;
+	*this = other; 
+}
 
 Dog& Dog::operator=(const Dog& other)
 {
@@ -31,4 +36,7 @@ void Dog::makeSound() const
 	std::cout << "Bark" << std::endl;
 }
 
-Dog::~Dog() {}
+Dog::~Dog()
+{
+	std::cout << "Dog destructor used" << std::endl;
+}
