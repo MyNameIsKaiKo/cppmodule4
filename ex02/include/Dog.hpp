@@ -14,16 +14,20 @@
 #define DOG_HPP
 
 #include "AAnimal.hpp"
+#include "Brain.hpp"
 
 class Dog : public AAnimal
 {
 	private:
+		Brain*		_brain;
 
-	 public:
+	public:
 		Dog();
 		Dog(const Dog& other);
 		Dog& operator=(const Dog& other);
-		void	makeSound() const;
+		void		makeSound() const;
+		void 		setIdea(std::string string, int index);
+		std::string	getIdea(int index) const; 
 		~Dog();
 };
 

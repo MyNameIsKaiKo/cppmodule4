@@ -15,13 +15,15 @@
 Cat::Cat() 
 {
 	this->_type = "Cat";
+	this->_brain = new Brain();
 	for (int i = 0; i < 100; i++)
 		this->_brain->setIdea("Mew", i);
+	std::cout << "Cat constructor used" << std::endl;
 }
 
-Cat::Cat(const Cat& other) 
+Cat::Cat(const Cat& other) : Animal(other)
 { 
-	*this = other; 
+	std::cout << "Cat copy constructor used" << std::endl;
 	this->_brain = new Brain(*other._brain);
 }
 
@@ -30,7 +32,7 @@ Cat& Cat::operator=(const Cat& other)
 	if (this == &other)
 		return (*this);
 	Animal::operator=(other);
-	this->_brain = other._brain;
+	*this->_brain = *other._brain;
 	return (*this);
 }
 
@@ -39,4 +41,16 @@ void Cat::makeSound () const
 	std::cout << "Mew" << std::endl;
 }
 
-Cat::~Cat() {}
+void Cat::setIdea(std::string string, int index)
+{
+	this->_brain->setIdea(string, index);
+}
+
+std::string Cat::getIdea(int index) const 
+{ return (this->_brain->getIdea(index)); }
+
+Cat::~Cat()
+{
+	delete this->_brain;
+	std::cout << "Cat destructor used" << std::endl;
+}

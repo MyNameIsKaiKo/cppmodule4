@@ -12,9 +12,16 @@
 
 #include "Brain.hpp"
 
-Brain::Brain() {}
+Brain::Brain()
+{
+	std::cout << "Brain constructor used" << std::endl;
+}
 
-Brain::Brain(const Brain& other) { *this = other;}
+Brain::Brain(const Brain& other)
+{
+	std::cout << "Brain copy constructor used" << std::endl;
+	*this = other;
+}
 
 Brain& Brain::operator=(const Brain& other)
 {
@@ -36,4 +43,7 @@ std::string Brain::getIdea(int index)
 	return (this->_ideas[index]);
 }
 
-Brain::~Brain() {}
+Brain::~Brain()
+{
+	std::cout << "Brain destructor used" << std::endl;
+}

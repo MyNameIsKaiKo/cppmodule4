@@ -12,9 +12,16 @@
 
 #include "../include/WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : _type("Wrong Type") {}
+WrongAnimal::WrongAnimal() : _type("Wrong Type")
+{
+	std::cout << "WrongAnimal constructor used" << std::endl;
+}
 
-WrongAnimal::WrongAnimal(const WrongAnimal& other) { *this = other; }
+WrongAnimal::WrongAnimal(const WrongAnimal& other)
+{
+	std::cout << "WrongAnimal copy constructor used" << std::endl;
+	*this = other; 
+}
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
 {
@@ -33,4 +40,7 @@ std::string	WrongAnimal::getType() const
 	return (this->_type);
 }
 
-WrongAnimal::~WrongAnimal() {}
+WrongAnimal::~WrongAnimal()
+{
+	std::cout << "WrongAnimal destructor used" << std::endl;
+}

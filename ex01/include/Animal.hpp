@@ -16,21 +16,17 @@
 
 #include <iostream>
 #include <string>
-#include "Brain.hpp"
 
 class Animal
 {
 	protected:
 		std::string _type;
-		Brain*		_brain;
 	 public:
 		Animal();
 		Animal(const Animal& other);
 		Animal& 	operator=(const Animal& other);
 		virtual void		makeSound() const;
-		void				setIdea(std::string string, int index);
 		std::string			getType() const;
-		std::string			getIdea(int index) const;
 		virtual ~Animal();	
 };
 

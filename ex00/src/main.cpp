@@ -41,6 +41,6 @@ int main()
 	delete wrongMeta;
 	delete wrongCat;
 	delete realWrongCat;
-	
+
 	return (0);
 }
