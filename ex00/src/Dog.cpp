@@ -12,16 +12,15 @@
 
 #include "../include/Dog.hpp"
 
-Dog::Dog() 
+Dog::Dog() : Animal() 
 {
 	std::cout << "Dog constructor used" << std::endl;
 	this->_type = "Dog";
 }
 
-Dog::Dog(const Dog& other) 
+Dog::Dog(const Dog& other) : Animal(other) 
 {
 	std::cout << "Dog copy constructor used" << std::endl;
-	*this = other; 
 }
 
 Dog& Dog::operator=(const Dog& other)

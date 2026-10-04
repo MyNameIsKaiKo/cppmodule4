@@ -12,16 +12,15 @@
 
 #include "../include/Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
 	std::cout << "Cat constructor used" << std::endl;
 	this->_type = "Cat";
 }
 
-Cat::Cat(const Cat& other) 
+Cat::Cat(const Cat& other) : Animal(other) 
 {
 	std::cout << "Cat copy constructor used" << std::endl;
-	*this = other; 
 }
 
 Cat& Cat::operator=(const Cat& other)

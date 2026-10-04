@@ -11,10 +11,13 @@
 /* ************************************************************************** */
 
 #include "../include/WrongCat.hpp"
+#include "WrongAnimal.hpp"
 
-WrongCat::WrongCat() { this->_type = "Wrong Cat"; }
+WrongCat::WrongCat() : WrongAnimal()
+{ this->_type = "Wrong Cat"; }
 
-WrongCat::WrongCat(const WrongCat& other) { *this = other; }
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
+{ }
 
 WrongCat& WrongCat::operator=(const WrongCat& other)
 {
@@ -28,4 +31,7 @@ void WrongCat::makeSound() const
 	std::cout << "Bark" << std::endl;
 }
 
-WrongCat::~WrongCat() {}
+WrongCat::~WrongCat()
+{
+	std::cout << "Wrong Cat destructor" << std::endl;
+}

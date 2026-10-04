@@ -33,4 +33,7 @@ std::string	WrongAnimal::getType() const
 	return (this->_type);
 }
 
-WrongAnimal::~WrongAnimal() {}
+WrongAnimal::~WrongAnimal()
+{
+	std::cout << "Wrong Animal destructor" << std::endl;
+}
